@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BusBookingSystem.Models.ReservationModel>
+@{
+    ViewBag.Title = "BookingDetails";
+}
+
+<h2>Booking Details</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.ReserveId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BusId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.DateOfTravel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.DateOfBooking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BoardingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.DestinationPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.NoOfSeats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.TotalAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BusType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.SeatNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.SeatType)
+        </th>
+    </tr>
+
+    @foreach (var a in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(x => a.ReserveId)</td>
+    <td>@Html.DisplayFor(x => a.Id)</td>
+    <td>@Html.DisplayFor(x => a.BusId)</td>
+    <td>@Html.DisplayFor(x => a.DateOfTravel)</td>
+    <td>@Html.DisplayFor(x => a.DateOfBooking)</td>
+    <td>@Html.DisplayFor(x => a.BoardingPoint)</td>
+    <td>@Html.DisplayFor(x => a.DestinationPoint)</td>
+    <td>@Html.DisplayFor(x => a.NoOfSeats)</td>
+    <td>@Html.DisplayFor(x => a.TotalAmount)</td>
+    <td>@Html.DisplayFor(x => a.BusType)</td>
+    <td>@Html.DisplayFor(x => a.SeatNumber)</td>
+    <td>@Html.DisplayFor(x => a.SeatType)</td>
+</tr>
+}
+</table>
+
+
+<p>@Html.ActionLink("Back To DashBoard", "DashBoard")</p>
+

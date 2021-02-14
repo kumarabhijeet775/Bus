@@ -1,0 +1,108 @@
+﻿@model BusBookingSystem.Models.BusModel
+@{
+    ViewBag.Title = "EditBus";
+}
+
+<h2>EditBus</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <h2>BusModel</h2>
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.BusId, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.BusId, new { htmlAttributes = new { @class = "form-control" , @readonly="readonly"} })
+            @Html.ValidationMessageFor(x => x.BusId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.BusRegistrionNo, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.BusRegistrionNo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.BusRegistrionNo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.BusName, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.BusName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.BusName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.BoardingPoint, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.BoardingPoint, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.BoardingPoint, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.DestinationPoint, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.DestinationPoint, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.DestinationPoint, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Fare, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.Fare, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.Fare, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.NoOfSeats, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.NoOfSeats, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.NoOfSeats, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.NoSittingSeats, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.NoSittingSeats, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.NoSittingSeats, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.NoSleeperSeats, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(x => x.NoSleeperSeats, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(x => x.NoSleeperSeats, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.BusType, htmlAttributes: new { @class = "Control-Group col-md-2" })
+        <div class="col-md-10">
+            <select class="form-control" name="BusType">
+                <option>AC</option>
+                <option>NONAC</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.BusType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Edit" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to list", "BusDetails")
+</div>

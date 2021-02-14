@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BusBookingSystem.Models.ApplicationUser>
+@{
+    ViewBag.Title = "PassengerDetails";
+}
+
+<h2>PassengerDetails</h2>
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.Name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(x => x.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Wallet)
+        </th>
+    </tr>
+
+
+    @foreach (var a in Model)
+    {
+
+        <tr>
+            <td>@Html.DisplayFor(x => a.Name)</td>
+            <td>@Html.DisplayFor(x => a.Email)</td>
+            <td>@Html.DisplayFor(x => a.PhoneNumber)</td>
+            <td>@Html.DisplayFor(x => a.Wallet)</td>
+            
+        </tr>
+    }
+</table>
+
+<p>@Html.ActionLink("Back To DashBoard", "DashBoard")</p>

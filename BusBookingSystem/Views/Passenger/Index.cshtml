@@ -1,0 +1,29 @@
+﻿@model BusBookingSystem.Models.ApplicationUser
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(x => x.Name)</dt>
+        <dd>@Html.DisplayFor(x => x.Name)</dd>
+        <br />
+        <dt>@Html.DisplayNameFor(x => x.Email)</dt>
+        <dd>@Html.DisplayFor(x => x.Email)</dd>
+        <br />
+        <dt>@Html.DisplayNameFor(x => x.PhoneNumber)</dt>
+        <dd>@Html.DisplayFor(x => x.PhoneNumber)</dd>
+        <br />
+        <dt>@Html.DisplayNameFor(x => x.Wallet)</dt>
+        <dd>@Html.DisplayFor(x => x.Wallet)</dd>
+    </dl>
+</div>
+
+<br />
+@Html.ActionLink("Book Bus", "Bus")
+<br />
+@Html.ActionLink("Reservation History", "ReservationHistory")

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BusBookingSystem.Models.TransactionModel>
+@{
+    ViewBag.Title = "TransactionDetails";
+}
+
+<h2>TransactionDetails</h2>
+
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.TransactionType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.CardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BusId)
+        </th>
+    </tr>
+
+
+    @foreach (var a in Model)
+    {
+
+        <tr>
+            <td>@Html.DisplayFor(x => a.TransactionType)</td>
+            <td>@Html.DisplayFor(x => a.CardNumber)</td>
+            <td>@Html.DisplayFor(x => a.Id)</td>
+            <td>@Html.DisplayFor(x => a.BusId)</td>
+
+        </tr>
+    }
+</table>
+
+<p>@Html.ActionLink("Back To DashBoard", "DashBoard")</p>

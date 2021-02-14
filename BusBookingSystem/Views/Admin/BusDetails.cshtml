@@ -1,0 +1,64 @@
+﻿@model IEnumerable<BusBookingSystem.Models.BusModel>
+@{
+    ViewBag.Title = "BusDetails";
+}
+
+<h2>BusDetails</h2>
+
+
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.BusRegistrionNo)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(x => x.BusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BoardingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.DestinationPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.Fare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.NoOfSeats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BusType)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+
+    @foreach (var a in Model)
+    {
+
+        <tr>
+            <td>@Html.DisplayFor(x => a.BusRegistrionNo)</td>
+
+            <td>@Html.DisplayFor(x => a.BusName)</td>
+            <td>@Html.DisplayFor(x => a.BoardingPoint)</td>
+            <td>@Html.DisplayFor(x => a.DestinationPoint)</td>
+            <td>@Html.DisplayFor(x => a.Fare)</td>
+            <td>@Html.DisplayFor(x => a.NoOfSeats)</td>
+
+            <td>@Html.DisplayFor(x => a.BusType)</td>
+
+            <td>
+                @Html.ActionLink("Edit", "EditBus", new { id = a.BusId })
+                @Html.ActionLink("Details", "BusDetail", new { id = a.BusId })
+                @Html.ActionLink("Delete", "DeleteBus", new { id = a.BusId })
+
+            </td>
+        </tr>
+    }
+</table>
+
+<p>@Html.ActionLink("Back To DashBoard", "DashBoard")</p>
+<p>@Html.ActionLink("Add New  Bus", "AddBus")</p>

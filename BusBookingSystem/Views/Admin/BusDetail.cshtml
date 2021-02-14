@@ -1,0 +1,33 @@
+﻿@model BusBookingSystem.Models.BusModel
+@{
+    ViewBag.Title = "BusDetail";
+}
+
+<h2>Bus Detail</h2>
+
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(x => x.BusRegistrionNo)</dt>
+        <dd>@Html.DisplayFor(x => x.BusRegistrionNo)</dd>
+        <dt>@Html.DisplayNameFor(x => x.BusName)</dt>
+        <dd>@Html.DisplayFor(x => x.BusName)</dd>
+        <dt>@Html.DisplayNameFor(x => x.BoardingPoint)</dt>
+        <dd>@Html.DisplayFor(x => x.BoardingPoint)</dd>
+        <dt>@Html.DisplayNameFor(x => x.DestinationPoint)</dt>
+        <dd>@Html.DisplayFor(x => x.DestinationPoint)</dd>
+        <dt>@Html.DisplayNameFor(x => x.Fare)</dt>
+        <dd>@Html.DisplayFor(x => x.Fare)</dd>
+        <dt>@Html.DisplayNameFor(x => x.NoOfSeats)</dt>
+        <dd>@Html.DisplayFor(x => x.NoOfSeats)</dd>
+        <dt>@Html.DisplayNameFor(x => x.NoSittingSeats)</dt>
+        <dd>@Html.DisplayFor(x => x.NoSittingSeats)</dd>
+        <dt>@Html.DisplayNameFor(x => x.NoSleeperSeats)</dt>
+        <dd>@Html.DisplayFor(x => x.NoSleeperSeats)</dd>
+        <dt>@Html.DisplayNameFor(x => x.BusType)</dt>
+        <dd>@Html.DisplayFor(x => x.BusType)</dd>
+
+    </dl>
+</div>
+@Html.ActionLink("Back to list", "BusDetails")

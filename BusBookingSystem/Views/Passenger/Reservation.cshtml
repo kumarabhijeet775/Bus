@@ -1,0 +1,103 @@
+﻿@model BusBookingSystem.Models.ReservationModel
+@{
+    ViewBag.Title = "Reservation";
+}
+
+<h2>Reservation</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BusId, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.BusId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.BusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Id, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BoardingPoint, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.BoardingPoint, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.BoardingPoint, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.DestinationPoint, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.DestinationPoint, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.DestinationPoint, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BusType, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.BusType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.BusType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.NoOfSeats, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.NoOfSeats, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.NoOfSeats, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.DateOfTravel, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.DateOfTravel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.DateOfTravel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.SeatNumber, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.SeatNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.SeatNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.SeatType, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" name="SeatType">
+                    <option>SLEEPER</option>
+                    <option>SEATER</option>
+                </select>
+                @Html.ValidationMessageFor(x => x.SeatType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Continue" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

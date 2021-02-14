@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BusBookingSystem.Models.BusModel>
+@{
+    ViewBag.Title = "BusResult";
+}
+
+<h2>Bus Result</h2>
+
+<table class="table">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(x => x.BusId)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(x => x.BusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.BoardingPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(x => x.DestinationPoint)
+        </th>
+        <th>
+        Reserve Bus
+        </th>
+    </tr>
+
+
+    @foreach (var a in Model)
+    {
+
+        <tr>
+            <td>@Html.DisplayFor(x => a.BusId)</td>
+            <td>@Html.DisplayFor(x => a.BusName)</td>
+            <td>@Html.DisplayFor(x => a.BoardingPoint)</td>
+            <td>@Html.DisplayFor(x => a.DestinationPoint)</td>
+            <td>@Html.ActionLink("Reserve", "Next", new { id = a.BusId })</td>
+        </tr>
+    }
+</table>
+

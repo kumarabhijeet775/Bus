@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+</head>
+<body>
+    <section class="showcase">
+        <header>
+            <h2 class="logo">HIGH-Way</h2>
+            <div class="toggle"></div>
+        </header>
+        <video muted loop autoplay>
+            <source src="~/Content/highway-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Never Stop</h2>
+            <br />
+            <h3>Exploring The World</h3>
+            <p>
+                HIGH-Way is a leading player for Bus Bookings. With the cheapest fare guarantee,
+                experience great value at the lowest price. Instant notifications ensure current bus schedule, instant fare drops,
+                amazing discounts, instant refunds and rebook options, price, Operator reviews and many more interesting features.
+            </p>
+            <a href="#">Explore</a>
+        </div>
+        <ul class="social">
+            <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+            <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+            <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+        </ul>
+    </section>
+
+    <div class="menu">
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Admin", "DashBoard", "Admin")</li>
+            <li>@Html.ActionLink("Passenger", "Index", "Passenger")</li>
+            <li>@Html.ActionLink("Register", "Register", "Account")</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+        </ul>
+    </div>
+    <script src="~/Scripts/JavaScript.js"></script>
+</body>
+</html>

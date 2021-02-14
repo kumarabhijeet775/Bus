@@ -1,0 +1,86 @@
+﻿@model BusBookingSystem.Models.TransactionModel
+@{
+    ViewBag.Title = "Transaction";
+}
+
+<h2 align="center">Transaction Page</h2>
+<br />
+<label>UserName:</label>  @ViewBag.Name
+<br />
+<label>Total Amount:</label>  @ViewBag.Amount
+<br />
+<label>From:</label>  @ViewBag.From
+<br />
+<label>To:</label>  @ViewBag.To
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BusId, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.BusId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.BusId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Id, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.CardNumber, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.CardNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.CardNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ExpiryDate, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.ExpiryDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.ExpiryDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Cvv, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.Cvv, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Cvv, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.TransactionType, htmlAttributes: new { @class = "Control-Group col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(x => x.TransactionType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.TransactionType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="PAY" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+    </div>
+}
+
+<br />
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

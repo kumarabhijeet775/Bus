@@ -1,0 +1,34 @@
+﻿@model BusBookingSystem.Models.ApplicationUser
+@{
+    ViewBag.Title = "DashBoard";
+}
+
+<h2>DashBoard</h2>
+<div>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(x => x.Name)</dt>
+        <dd>@Html.DisplayFor(x => x.Name)</dd>
+        <dt>@Html.DisplayNameFor(x => x.Email)</dt>
+        <dd>@Html.DisplayFor(x => x.Email)</dd>
+        <dt>@Html.DisplayNameFor(x => x.PhoneNumber)</dt>
+        <dd>@Html.DisplayFor(x => x.PhoneNumber)</dd>
+        <dt>@Html.DisplayNameFor(x => x.Wallet)</dt>
+        <dd>@Html.DisplayFor(x => x.Wallet)</dd>
+    </dl>
+</div>
+
+
+
+@Html.ActionLink("Add new Bus", "AddBus")
+<br />
+@Html.ActionLink("Bus Details", "BusDetails")
+<br />
+@Html.ActionLink("Passenger Details", "PassengerDetails")
+<br />
+@Html.ActionLink("Transaction Details", "TransactionDetails")
+<br />
+@Html.ActionLink("Reservation Details", "BookingDetails")
+
+
