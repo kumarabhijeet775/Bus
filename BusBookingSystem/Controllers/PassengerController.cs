@@ -107,13 +107,13 @@ namespace BusBookingSystem.Controllers
             {
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-                mail.From = new MailAddress("abhijeetk.hexaware@gmail.com");
+                mail.From = new MailAddress("EmailId");
                 mail.To.Add(User.Identity.GetUserName());
                 mail.Subject = "Booking";
                 mail.Body = "Your Booking Has Been Successful";
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = true;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("abhijeetk.hexaware@gmail.com", "Hexaware123@456$%^");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("UserEmail", "Password");
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
 
